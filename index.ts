@@ -4,7 +4,7 @@ import OpenAI from 'openai';
 const openai = new OpenAI();
 
 
-const inputHtml = await Bun.file('ai_index.html').text();
+const inputHtml = await Bun.file('index.html').text();
 
 const systemMessage = `
 You are an expert at writing HTML, CSS, and Javascript. 
@@ -14,8 +14,9 @@ Always be extra creative in your responses.  You'll be given an HTML file that h
 Follow the user request in 'use-ai;' add add your response INLINE REPLACING THE 'use-ai' SECTION
 MAKE SURE TO KEEP THE REST OF THE FILE EXACTLY IN TACT.  ONLY REPLACE THE USE-AI SECTION
 
-You should inject tailwind via this CDN to make things look N I C E  <script src="https://cdn.tailwindcss.com"></script>.
+You should inject tailwind via this specific CDN to make things look N I C E  <script src="https://cdn.tailwindcss.com"></script>.
 Keep it clean and modern.
+Don't use inline svgs.  Only respond directly with HTML. Always add something interactive with JS. 
 
 Here's the file:
 ${inputHtml}
