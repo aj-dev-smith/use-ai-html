@@ -1,8 +1,6 @@
+
+import * as fs from 'fs';
 import OpenAI from 'openai';
-const { exec } = require('child_process');
-const fs = require('fs')
-
-
 const openai = new OpenAI();
 
 
@@ -16,23 +14,30 @@ Always be extra creative in your responses.  You'll be given an HTML file that h
 Follow the user request in 'use-ai;' add add your response INLINE REPLACING THE 'use-ai' SECTION
 MAKE SURE TO KEEP THE REST OF THE FILE EXACTLY IN TACT.  ONLY REPLACE THE USE-AI SECTION
 
-You should inject tailwind via this CDN to make things look N I C E  <script src="https://cdn.tailwindcss.com"></script>
+You should inject tailwind via this CDN to make things look N I C E  <script src="https://cdn.tailwindcss.com"></script>.
+Keep it clean and modern.
 
 Here's the file:
 ${inputHtml}
 `
 
 async function main() {
-  const chatCompletion = await openai.chat.completions.create({
+  const stream = await openai.chat.completions.create({
     messages: [{ role: 'system', content: systemMessage }],
     model: 'gpt-4',
+    stream: true
   });
 
-  const finishedPage = chatCompletion.choices.pop()?.message.content;
-  console.log('response', finishedPage);;
+  // First clear index.html
+  fs.writeFileSync('index.html', '', 'utf8');
 
-  fs.writeFileSync('index.html', finishedPage);
-  exec('open index.html');
+  // Update continuously.  end stream each time to force page refresh
+  let pageSoFar = '';
+  for await (const part of stream) {
+    const content = part.choices[0]?.delta?.content || '';
+    pageSoFar+=content;
+    fs.writeFileSync('index.html', pageSoFar, 'utf8');
+  }
 }
 
 main();

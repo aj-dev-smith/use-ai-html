@@ -1,0 +1,7 @@
+{
+  "server": true,
+  "files": ["index.html"],
+  "reloadDelay": 0,
+  "reloadDebounce": 100,
+  "injectChanges": false
+}

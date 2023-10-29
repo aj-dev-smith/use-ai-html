@@ -1,33 +1,52 @@
 <html>
   <head>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <title>My New AI SaaS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-blue-50">
-    <h1 class="text-center text-4xl py-5 bg-white rounded mx-5 mt-10 text-blue-900 font-bold"> My New AI SaaS</h1>
-    <p class="text-center text-xl text-gray-600 mx-5"> Service description </p>
-    
-    <!-- replaced 'use-ai' -->
-    <section class="py-10 mx-5">
-      <h2 class="text-2xl text-gray-700 font-bold">Our Services</h2>
-      <div class="grid grid-cols-3 gap-4 mt-5">
-        <div class="card bg-white shadow-md rounded p-5">
-          <h3 class="text-xl text-blue-800">Service 1</h3>
-          <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+  <body>
+    <h1 class="text-3xl font-semibold mb-4"> My New AI SaaS </h1>
+    <p class="mb-6"> Service description </p>
+    <div class="mx-10">
+      <section>
+        <h2 class="text-2xl font-bold mb-3">Our Features</h2>
+        <ul class="list-disc pl-5">
+          <li class="mb-2">Innovative AI solutions.</li>
+          <li class="mb-2">Scalable machine learning tools.</li>
+          <li class="mb-2">Data science consulting.</li>
+          <li>Custom AI development.</li>
+        </ul>
+      </section>
+      <section class="mt-6">
+        <h2 class="text-2xl font-bold mb-3">Pricing</h2>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-gray-100 p-6 rounded-lg shadow">
+            <h3 class="text-lg font-semibold mb-2">Starter</h3>
+            <p class="text-gray-600">$99/month</p>
+            <button class="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">Start now</button>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow">
+            <h3 class="text-lg font-semibold mb-2">Pro</h3>
+            <p class="text-gray-600">$199/month</p>
+            <button class="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">Go Pro</button>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg shadow">
+            <h3 class="text-lg font-semibold mb-2">Enterprise</h3>
+            <p class="text-gray-600">Contact Us</p>
+            <button class="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">Get in touch</button>
+          </div>
         </div>
-        <div class="card bg-white shadow-md rounded p-5">
-          <h3 class="text-xl text-blue-800">Service 2</h3>
-          <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+      </section>
+      <section class="mt-6">
+        <h2 class="text-2xl font-bold mb-3">Contact Us</h2>
+        <div>
+          <form action="#" method="post">
+            <input class="w-full mb-3 p-2 border border-gray-300 rounded" type="text" name="name" placeholder="Your Name">
+            <input class="w-full mb-3 p-2 border border-gray-300 rounded" type="email" name="email" placeholder="Your Email">
+            <textarea class="w-full mb-3 p-2 border border-gray-300 rounded" name="message" rows="3" placeholder="Your Message"></textarea>
+            <button type="submit" class="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">Send Message</button>
+          </form>
         </div>
-        <div class="card bg-white shadow-md rounded p-5">
-          <h3 class="text-xl text-blue-800">Service 3</h3>
-          <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        </div>
-      </div>
-    </section>
-
-    <footer class="bg-white shadow-lg rounded mt-10 mx-5 py-5">
-      <p class="text-center text-gray-500 text-sm">2022 &copy; My New AI SaaS</p>
-    </footer>
-    <!-- end of the 'use-ai' -->
+      </section>
+    </div>
   </body>
 </html>

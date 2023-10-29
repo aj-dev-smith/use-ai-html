@@ -2,6 +2,9 @@
   "name": "use-ai",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "start": "bun index.ts & browser-sync start --config bs-config.json"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
@@ -9,6 +12,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "browser-sync": "^2.29.3",
     "openai": "^4.14.1"
   }
 }
