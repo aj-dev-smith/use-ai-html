@@ -3,7 +3,6 @@ import * as fs from 'fs';
 import OpenAI from 'openai';
 const openai = new OpenAI();
 
-
 const inputHtml = await Bun.file('index.html').text();
 
 const systemMessage = `
